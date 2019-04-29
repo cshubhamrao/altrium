@@ -1,0 +1,1035 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+  <!-- <noscript>
+      <strong>We're sorry but Altrium doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected
+    <script src="https://d1tdp7z6w94jbb.cloudfront.net/js/jquery-3.3.1.min.js" type="text/javascript" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/webflow.js" type="text/javascript"></script>
+    <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--&lt;!&ndash; Include all compiled plugins (below), or include individual files as needed &ndash;&gt;-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/nearlib@0.3.1/dist/nearlib.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="./js/main.js"></script>
+<button id="clic" type="button">$</button>
+<button id="clic2" type="button">$$</button> -->
+
+
+
+    <!-- <script src="../../node_modules/web3/dist/web3.min.js"></script> -->
+
+    <!-- <script>
+       if(typeof web3 !== 'undefined') {
+         console.log("Unlock MetaMask");
+         web3 = new Web3(web3.currentProvider);
+       }
+       else {
+         console.log("Install MetaMask");
+         web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:3000"));
+       }
+       web3.version.getNetwork((err, netId) => {
+  switch (netId) {
+    case "1":
+      console.log('This is mainnet')
+      break
+    case "2":
+      console.log('This is the deprecated Morden test network.')
+      break
+    case "3":
+      console.log('This is the ropsten test network.')
+      break
+    case "4":
+      console.log('This is the Rinkeby test network.')
+      break
+    case "42":
+      console.log('This is the Kovan test network.')
+      break
+    default:
+      console.log('This is an unknown network.')
+  }
+})
+       web3.eth.defaultAccount=web3.eth.accounts[0];
+       var testContract = web3.eth.contract([
+        {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_tradeID",
+        "type": "bytes16"
+      },
+      {
+        "name": "_seller",
+        "type": "address"
+      },
+      {
+        "name": "_buyer",
+        "type": "address"
+      },
+      {
+        "name": "_value",
+        "type": "uint256"
+      },
+      {
+        "name": "_fee",
+        "type": "uint16"
+      },
+      {
+        "name": "_maximumGasPrice",
+        "type": "uint128"
+      },
+      {
+        "name": "_v",
+        "type": "uint8"
+      },
+      {
+        "name": "_r",
+        "type": "bytes32"
+      },
+      {
+        "name": "_s",
+        "type": "bytes32"
+      }
+    ],
+    "name": "relaySellerRequestCancel",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_newRequestCancellationMinimumTime",
+        "type": "uint32"
+      }
+    ],
+    "name": "setRequestCancellationMinimumTime",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "setOwner",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_tradeID",
+        "type": "bytes16"
+      },
+      {
+        "name": "_seller",
+        "type": "address"
+      },
+      {
+        "name": "_buyer",
+        "type": "address"
+      },
+      {
+        "name": "_value",
+        "type": "uint256"
+      },
+      {
+        "name": "_fee",
+        "type": "uint16"
+      },
+      {
+        "name": "_v",
+        "type": "uint8"
+      },
+      {
+        "name": "_r",
+        "type": "bytes32"
+      },
+      {
+        "name": "_s",
+        "type": "bytes32"
+      },
+      {
+        "name": "_buyerPercent",
+        "type": "uint8"
+      }
+    ],
+    "name": "resolveDispute",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_tradeID",
+        "type": "bytes16"
+      },
+      {
+        "name": "_seller",
+        "type": "address"
+      },
+      {
+        "name": "_buyer",
+        "type": "address"
+      },
+      {
+        "name": "_value",
+        "type": "uint256"
+      },
+      {
+        "name": "_fee",
+        "type": "uint16"
+      }
+    ],
+    "name": "buyerCancel",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "name": "escrows",
+    "outputs": [
+      {
+        "name": "exists",
+        "type": "bool"
+      },
+      {
+        "name": "sellerCanCancelAfter",
+        "type": "uint32"
+      },
+      {
+        "name": "totalGasFeesSpentByRelayer",
+        "type": "uint128"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_tradeID",
+        "type": "bytes16"
+      },
+      {
+        "name": "_seller",
+        "type": "address"
+      },
+      {
+        "name": "_buyer",
+        "type": "address"
+      },
+      {
+        "name": "_value",
+        "type": "uint256"
+      },
+      {
+        "name": "_fee",
+        "type": "uint16"
+      },
+      {
+        "name": "_maximumGasPrice",
+        "type": "uint128"
+      },
+      {
+        "name": "_v",
+        "type": "uint8"
+      },
+      {
+        "name": "_r",
+        "type": "bytes32"
+      },
+      {
+        "name": "_s",
+        "type": "bytes32"
+      }
+    ],
+    "name": "relaySellerCancel",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_tradeID",
+        "type": "bytes16"
+      },
+      {
+        "name": "_seller",
+        "type": "address"
+      },
+      {
+        "name": "_buyer",
+        "type": "address"
+      },
+      {
+        "name": "_value",
+        "type": "uint256"
+      },
+      {
+        "name": "_fee",
+        "type": "uint16"
+      }
+    ],
+    "name": "sellerCancel",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_tradeID",
+        "type": "bytes16"
+      },
+      {
+        "name": "_seller",
+        "type": "address"
+      },
+      {
+        "name": "_buyer",
+        "type": "address"
+      },
+      {
+        "name": "_value",
+        "type": "uint256"
+      },
+      {
+        "name": "_fee",
+        "type": "uint16"
+      },
+      {
+        "name": "_maximumGasPrice",
+        "type": "uint128"
+      },
+      {
+        "name": "_v",
+        "type": "uint8"
+      },
+      {
+        "name": "_r",
+        "type": "bytes32"
+      },
+      {
+        "name": "_s",
+        "type": "bytes32"
+      }
+    ],
+    "name": "relayRelease",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "requestCancellationMinimumTime",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_tradeID",
+        "type": "bytes16"
+      },
+      {
+        "name": "_seller",
+        "type": "address"
+      },
+      {
+        "name": "_buyer",
+        "type": "address"
+      },
+      {
+        "name": "_value",
+        "type": "uint256"
+      },
+      {
+        "name": "_fee",
+        "type": "uint16"
+      }
+    ],
+    "name": "disableSellerCancel",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_newRelayer",
+        "type": "address"
+      }
+    ],
+    "name": "setRelayer",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_tradeID",
+        "type": "bytes16"
+      },
+      {
+        "name": "_seller",
+        "type": "address"
+      },
+      {
+        "name": "_buyer",
+        "type": "address"
+      },
+      {
+        "name": "_value",
+        "type": "uint256"
+      },
+      {
+        "name": "_fee",
+        "type": "uint16"
+      }
+    ],
+    "name": "sellerRequestCancel",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "arbitrator",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "relayer",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_tradeID",
+        "type": "bytes16[]"
+      },
+      {
+        "name": "_seller",
+        "type": "address[]"
+      },
+      {
+        "name": "_buyer",
+        "type": "address[]"
+      },
+      {
+        "name": "_value",
+        "type": "uint256[]"
+      },
+      {
+        "name": "_fee",
+        "type": "uint16[]"
+      },
+      {
+        "name": "_maximumGasPrice",
+        "type": "uint128[]"
+      },
+      {
+        "name": "_v",
+        "type": "uint8[]"
+      },
+      {
+        "name": "_r",
+        "type": "bytes32[]"
+      },
+      {
+        "name": "_s",
+        "type": "bytes32[]"
+      },
+      {
+        "name": "_actionByte",
+        "type": "uint8[]"
+      }
+    ],
+    "name": "batchRelay",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool[]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_tradeID",
+        "type": "bytes16"
+      },
+      {
+        "name": "_seller",
+        "type": "address"
+      },
+      {
+        "name": "_buyer",
+        "type": "address"
+      },
+      {
+        "name": "_value",
+        "type": "uint256"
+      },
+      {
+        "name": "_fee",
+        "type": "uint16"
+      },
+      {
+        "name": "_maximumGasPrice",
+        "type": "uint128"
+      },
+      {
+        "name": "_v",
+        "type": "uint8"
+      },
+      {
+        "name": "_r",
+        "type": "bytes32"
+      },
+      {
+        "name": "_s",
+        "type": "bytes32"
+      }
+    ],
+    "name": "relaySellerCannotCancel",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_to",
+        "type": "address"
+      },
+      {
+        "name": "_amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "withdrawFees",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_newArbitrator",
+        "type": "address"
+      }
+    ],
+    "name": "setArbitrator",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_tradeID",
+        "type": "bytes16"
+      },
+      {
+        "name": "_seller",
+        "type": "address"
+      },
+      {
+        "name": "_buyer",
+        "type": "address"
+      },
+      {
+        "name": "_value",
+        "type": "uint256"
+      },
+      {
+        "name": "_fee",
+        "type": "uint16"
+      },
+      {
+        "name": "_maximumGasPrice",
+        "type": "uint128"
+      },
+      {
+        "name": "_v",
+        "type": "uint8"
+      },
+      {
+        "name": "_r",
+        "type": "bytes32"
+      },
+      {
+        "name": "_s",
+        "type": "bytes32"
+      }
+    ],
+    "name": "relayBuyerCancel",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_tokenContract",
+        "type": "address"
+      },
+      {
+        "name": "_spender",
+        "type": "address"
+      },
+      {
+        "name": "_value",
+        "type": "uint256"
+      }
+    ],
+    "name": "approveToken",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "feesAvailableForWithdraw",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_tokenContract",
+        "type": "address"
+      },
+      {
+        "name": "_transferTo",
+        "type": "address"
+      },
+      {
+        "name": "_transferFrom",
+        "type": "address"
+      },
+      {
+        "name": "_value",
+        "type": "uint256"
+      }
+    ],
+    "name": "transferTokenFrom",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_tradeID",
+        "type": "bytes16"
+      },
+      {
+        "name": "_seller",
+        "type": "address"
+      },
+      {
+        "name": "_buyer",
+        "type": "address"
+      },
+      {
+        "name": "_value",
+        "type": "uint256"
+      },
+      {
+        "name": "_fee",
+        "type": "uint16"
+      }
+    ],
+    "name": "release",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_tradeID",
+        "type": "bytes16"
+      },
+      {
+        "name": "_seller",
+        "type": "address"
+      },
+      {
+        "name": "_buyer",
+        "type": "address"
+      },
+      {
+        "name": "_value",
+        "type": "uint256"
+      },
+      {
+        "name": "_fee",
+        "type": "uint16"
+      },
+      {
+        "name": "_paymentWindowInSeconds",
+        "type": "uint32"
+      },
+      {
+        "name": "_expiry",
+        "type": "uint32"
+      },
+      {
+        "name": "_v",
+        "type": "uint8"
+      },
+      {
+        "name": "_r",
+        "type": "bytes32"
+      },
+      {
+        "name": "_s",
+        "type": "bytes32"
+      }
+    ],
+    "name": "createEscrow",
+    "outputs": [],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_tokenContract",
+        "type": "address"
+      },
+      {
+        "name": "_transferTo",
+        "type": "address"
+      },
+      {
+        "name": "_value",
+        "type": "uint256"
+      }
+    ],
+    "name": "transferToken",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "_tradeHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "Created",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "_tradeHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "SellerCancelDisabled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "_tradeHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "SellerRequestedCancel",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "_tradeHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "CancelledBySeller",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "_tradeHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "CancelledByBuyer",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "_tradeHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "Released",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "_tradeHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "DisputeResolved",
+    "type": "event"
+  }
+  ]);
+var test = testContract.at("0x8267aafa177aefdd08c464d527613b5ef5275dfd");
+</script> -->
+
+    <div class="header">
+        <div class="team-menu">Altrium</div>
+        <div class="channel-menu"><span class="channel-menu_name"><span class="channel-menu_prefix">#</span> cs61b</span>
+        </div>
+    </div>
+    <div class="main">
+        <div class="listings">
+            <div class="listings_channels">
+                <h2 class="listings_header">Channels</h2>
+                <ul class="channel_list">
+                    <li class="channel active"><a class="channel_name"><span class="unread">2</span><span><span class="prefix">#</span>cs61b</span></a></li>
+                    <li class="channel"><a class="channel_name"><span class="unread">10</span><span><span class="prefix">#</span>physics</span></a></li>
+                    <li class="channel"><a class="channel_name"><span class="unread">1</span><span><span class="prefix">#</span>challenge_lab</span></a></li>
+                    <li class="channel"><a class="channel_name"><span class="unread">4</span><span><span class="prefix">#</span>chemistry</span></a></li>
+                    <li class="channel"><a class="channel_name"><span class="unread">1</span><span><span class="prefix">#</span>piano_lessons</span></a></li>
+                    <li class="channel"><a class="channel_name"><span class="unread">11</span><span><span class="prefix">#</span>spring_break_plans</span></a></li>
+                    <li class="channel"><a class="channel_name"><span class="unread">7</span><span><span class="prefix">#</span>startup_semester</span></a></li>
+                    <li class="channel"><a class="channel_name"><span class="unread">8</span><span><span class="prefix">#</span>internships</span></a></li>
+                    <li class="channel"><a class="channel_name"><span class="unread">3</span><span><span class="prefix">#</span>startups</span></a></li>
+                    <li class="channel"><a class="channel_name"><span class="unread">6</span><span><span class="prefix">#</span>tech_support</span></a></li>
+                    <li class="channel"><a class="channel_name"><span class="unread">1</span><span><span class="prefix">#</span>freelance</span></a></li>
+                </ul>
+            </div>
+            <div class="listings_direct-messages">
+                <h2 class="listings_header">Experts Online</h2>
+                <ul class="channel_list">
+                    <li class="channel"><a class="channel_name"><span class="unread">20</span><span><span class="prefix"> </span>Orlando Diggs</span></a></li>
+                    <li class="channel"><a class="channel_name"><span class="unread">6</span><span><span class="prefix"> </span>Carmen Velasco</span></a></li>
+                    <li class="channel"><a class="channel_name"><span class="unread">1</span><span><span class="prefix"> </span>Marie Jensen</span></a></li>
+                    <li class="channel"><a class="channel_name"><span class="unread">8</span><span><span class="prefix"> </span>Alex Lee</span></a></li>
+                    <li class="channel"><a class="channel_name"><span class="unread">10</span><span><span class="prefix"> </span>Leo Gill</span></a></li>
+                    <li class="channel"><a class="channel_name"><span class="unread">2</span><span><span class="prefix"> </span>Britney Cooper</span></a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="message-history">
+            <div class="message"><a class="message_profile-pic" href=""></a><a class="message_username" href="">Chika</a><span class="message_timestamp">10:11 PM</span><span class="message_star"></span><span class="message_content">Hello, I'm Chika. I have a question for my assignement. I need to solve it until midnight</span></div>
+            <div
+                class="message"><a class="message_profile-pic" href=""></a><a class="message_username" href="">Chika</a><span class="message_timestamp">10:12 PM</span><span class="message_star"></span><span class="message_content">Ploblem: Suppose that H is a pairwise independent hash family that maps the elements U = {1, . . . , n}
+to 1, . . . , n3
+. Show that the probability that a randomly chosen hash function h from H is
+one-to-one is at least 1 − 1/n.</span></div>
+    </div>
+    </div>
+    <div class="footer">
+        <div class="user-menu"><span class="user-menu_profile-pic"></span><span class="user-menu_username">Chika</span><img class="connection_icon" src="data:image/png;base64,iVBORw0KGgoAAAAN..." /><span class="connection_status">online</span></div>
+        <div class="input-box"><input class="input-box_text" type="text" /></div>
+    </div>
+</body>
+
+</html>
